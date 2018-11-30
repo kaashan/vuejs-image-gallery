@@ -1,0 +1,55 @@
+header{
+	width: 50%;
+    margin: 0 auto;
+}
+.image-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.logo-container {
+    max-width: 150px;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+#operations > div{
+    display: inline-block;
+}
+.bold {
+    font-weight: bold;
+}
+.placeCard {
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    margin: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.placeCard img {
+    max-width: 100%;
+}
+.flRight{
+    float:right;
+}
+.card-details{
+    height: 30px;
+    padding: 15px 10px;
+}
+.placeDescription{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 600px;
+    text-align: justify;
+    background-color: white;
+    opacity: 0.7;
+    padding: 10px;
+    height: 85%;
+    width: 93%;
+}
+.placeDescription > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

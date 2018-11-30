@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wonders of the world!</title>
+        <link rel='stylesheet' type='text/CSS' href="appStyle.css" />
+
+    </head>
+<body>
+    <header>
+        <h1>
+			Welcome to the Wonders of the world picture gallery
+		</h1>
+    </header>
+    <div id="app">
+        <div id="operations">
+            <div class="search-results">
+                <input type="text" v-model="search" placeholder="Search by Name ..." autofocus/>
+            </div>
+            <div>
+                <span class="bold">Total Likes: </span> {{ totalLikes }}
+            </div>
+        </div>
+
+        <div class="image-wrapper">
+            <div class="placeCard" v-for="(result, index) in filteredResults" @mouseover="setSelected(index)" @mouseout="removeSelected(index)">
+                <img v-bind:src="result.imageURL" />
+                <div class="card-details">
+                    <span class="bold">Likes: {{ result.likes }} </span> 
+					<span class="bold">Ratings: {{ result.ratings }} </span> 
+					<span class="bold flRight">{{ result.place }}</span>
+                </div>
+                <div v-show="selectedIndex === index" class="placeDescription">
+                    <div>
+                        <div class="bold"> {{ result.place }} </div>
+                        <div> {{ result.description }} </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="displayNoMatch">
+                {{ noResultMessage }}
+            </div>
+        </div>
+
+    </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.9/vue.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
